@@ -8,9 +8,9 @@ from collections import defaultdict
 
 """
 Usage:
-python question4.py cfg.counts parse_train.dat
+python relabel_rare.py cfg.counts parse_train.dat
 
-Question 4:  Replace infrequent words (Count(x) < 5) in the 
+Replace infrequent words (Count(x) < 5) in the 
 original training data file with a common symbol RARE .
 It modifies the training data file directly.
 

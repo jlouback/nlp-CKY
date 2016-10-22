@@ -1,5 +1,5 @@
-from question5_utils import is_rare
-from question5_utils import get_counts
+from utils import is_rare
+from utils import get_counts
 import sys
 import operator
 import logging
@@ -8,20 +8,21 @@ import timeit
 
 """
 Usage:
-python question6.py cfg_vert.counts parse_dev.dat cfg.counts > [output_file]
+python cky.py cfg_vert.counts parse_dev.dat cfg.counts > [output_file]
 
-Question 6:  Using the counts file from the vertical markovization, it calculates the maximum likelihood estimates
-for the PCFG rules, then generates the tree with max probability per line of parse_dev.dat
-represented in the JSON tree format. This is THE SAME algorithm used in question 5.
+Using the counts file from the vertical markovization performed on the training data,
+calculates the maximum likelihood estimates for the PCFG rules, then generates the tree with 
+max probability per line of parse_dev.dat represented in the JSON tree format.
 
-The difference is we are using cfg_vert.counts (resulting from the vertical markovization), and cfg.counts - the
-original count file - is used in the case of a tree not found.
+The difference is we are using cfg_vert.counts (resulting from the vertical markovization), and cfg.counts 
+(the original count file) is used in the case of a tree not found.
 
-Uses functions in question5_utils.py, namely to organize unary, binary and nonterminal counts into dictionaries.
+Uses functions in utils.py, namely to organize unary, binary and nonterminal counts into dictionaries.
+
 First run
 
 python count_cfg_freq.py parse_train_vert.dat > cfg_vert.counts
-python question4.py cfg.counts parse_train.dat
+python relabel_rare.py cfg.counts parse_train.dat
 python count_cfg_freq.py parse_train_vert.dat > cfg_vert.counts
 
 to replace words with count < 5 with _RARE_

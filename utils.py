@@ -11,7 +11,7 @@ from collections import defaultdict
 Function to get unitary rule counts, binary rule counts and
 nonterminal counts, organized in dictionaries.
 
-Used in question5.py
+Used in cky.py
 
 """
 
