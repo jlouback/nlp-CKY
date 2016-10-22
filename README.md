@@ -24,7 +24,7 @@ pretty_print_tree.py
 My python scripts:
 relabel_rare.py
 utils.py 
-cky.py
+cyk.py
 
 ===================================================
 Counts for parse_train.dat, parse_train_vert.dat,

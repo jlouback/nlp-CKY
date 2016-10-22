@@ -8,7 +8,7 @@ import timeit
 
 """
 Usage:
-python cky.py cfg_vert.counts parse_dev.dat cfg.counts > [output_file]
+python cyk.py cfg_vert.counts parse_dev.dat cfg.counts > [output_file]
 
 Using the counts file from the vertical markovization performed on the training data,
 calculates the maximum likelihood estimates for the PCFG rules, then generates the tree with 
@@ -28,7 +28,7 @@ python count_cfg_freq.py parse_train_vert.dat > cfg_vert.counts
 to replace words with count < 5 with _RARE_
 """
 
-def cky(words, binary_count, unary_count, nonterminal_count):
+def cyk(words, binary_count, unary_count, nonterminal_count):
     # Initialize lookup chart with unary rules on diagonal and
     # their respective probabilities in the probability matrix
     n = len(words)
@@ -92,7 +92,7 @@ dev_data = file(sys.argv[2],"r")
 line = dev_data.readline().strip()
 while line:
     words = line.split(" ")
-    chart, backpointers = cky(words, binary_count, unary_count, nonterminal_count)
+    chart, backpointers = cyk(words, binary_count, unary_count, nonterminal_count)
     n = len(words)
     # Check if at least one valid tree is returned using the vertical markovization model
     if len(backpointers[0][n]) > 0:
@@ -105,7 +105,7 @@ while line:
             tree = trace(X,0,n)
     # if not, try with original rule counts
     else :
-        chart, backpointers = cky(words, binary_simple, unary_simple, nonterminal_simple)
+        chart, backpointers = cyk(words, binary_simple, unary_simple, nonterminal_simple)
         if 'S' in backpointers[0][n]:
             tree = trace('S',0,n)
         # If there are no valid parse trees starting with 'S', get arg max starting with any nonterminal
