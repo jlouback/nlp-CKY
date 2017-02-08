@@ -83,7 +83,7 @@ def trace(root, i, j):
 # start = timeit.default_timer()
 
 # Obtain the count(X->YZ), count(X->w), count(X), A.K.A,  the binary, unary and non-terminal counts
-# (see questions5_utils.py)
+# (see utils.py)
 nonterminal_count, unary_count, binary_count = get_counts(sys.argv[1])
 nonterminal_simple, unary_simple, binary_simple = get_counts(sys.argv[3])
 

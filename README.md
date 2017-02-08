@@ -1,4 +1,4 @@
-# NLP - POS tagger with CKY algorithm
+# NLP - POS tagger with CYK algorithm
 
 Code for assignments from prof. Michael Collin's NLP course,
 COMSW4705 Spring 2015 at Columbia U.
@@ -13,17 +13,25 @@ successful execution.
 Files given by prof. Collins
 
 count_cfg_freq.py
+
 eval_parser.py
+
 parse_dev.dat
+
 parse_dev.key
+
 parse_train_vert.dat
+
 parse_train.dat
+
 pretty_print_tree.py
 
 ===================================================
 My python scripts:
 relabel_rare.py
+
 utils.py 
+
 cyk.py
 
 ===================================================
